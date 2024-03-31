@@ -36,9 +36,9 @@ var duration = 0.35,
 	ease = 'none';
 ease = 'expo.inOut';
 
-const slider_slider = document.querySelector(".slider_slider")
+const slider_slide = document.querySelector(".slider_slide")
 
-$(slider_slider).mousedown(function (event) {
+$(slider_slide).mousedown(function (event) {
 	isMouseDown = true;
 	$('body').addClass('dragging');
 

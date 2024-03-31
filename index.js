@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     drag: false,
   }).mount();
 
-  const slider_container_ = document.querySelector(".slider_slider");
+  const slider_container_ = document.querySelector(".slider_slide");
   let notClicked = true;
   slider_container_.addEventListener("mousedown", () => {
     notClicked = false;
@@ -96,5 +96,32 @@ document.addEventListener("DOMContentLoaded", function () {
       // ease: "easeInOutExpo",
       makeSure: true,
     });
+  });
+
+  //handle scrabmle
+  const scrabmle_slide = document.querySelector(".scramble_slide");
+  const ele = document.querySelector(".scrambled_text");
+
+  // //gen random letters that match the element's text length
+  // let randomize = getRandomLetters(lettersAndNumbers, ele);
+  // setHTML(ele, randomize)
+
+  let animating = false;
+
+  scrabmle_slide.addEventListener("click", () => {
+    // interval is multiplied by 100 -> 50ms between every letter.
+    //execting 45 times (length of the text)
+    let duration = 50 * ele.textContent.length + 20; // = 2.255ms + 20ms = 2.275ms
+
+    if (animating == true) {
+      return;
+    } else if (animating == false) {
+      setTimeout(() => {
+        animating = false;
+      }, duration);
+
+      scramble.animate(ele, 0.5);
+      animating = true;
+    }
   });
 });
