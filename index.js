@@ -12,8 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 600);
 
   new Splide(".splide", {
+    keyboard: true,
     gap: "3rem",
     drag: false,
+    wheel: true,
+    // waitForTransition: true,
+    wheelSleep: 100,
   }).mount();
 
   const slider_container_ = document.querySelector(".slider_slide");
@@ -101,10 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
   //handle scrabmle
   const scrabmle_slide = document.querySelector(".scramble_slide");
   const ele = document.querySelector(".scrambled_text");
-
-  // //gen random letters that match the element's text length
-  // let randomize = getRandomLetters(lettersAndNumbers, ele);
-  // setHTML(ele, randomize)
 
   let animating = false;
 
