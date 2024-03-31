@@ -105,7 +105,6 @@ main {
 
 h1  {
     margin-bottom: 0.5rem;
-    font-size: 3rem;
 }
 h1 + p {
     opacity: 0.5;
@@ -263,6 +262,9 @@ footer p {
     
     background-color: var(--black);
 
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #000000 var(--bgc-spacing)), repeating-linear-gradient(#122D3C55, #122D3C);
+    background-size: 100vw 100vh;
+
 
     position: absolute;
     left: 0;
@@ -273,10 +275,17 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    pointer-events: none;
+    
 }
 
 .loader h2 {
     font-size: 4rem;
+
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
 }
 
 
@@ -293,20 +302,26 @@ footer p {
 
 
 
-
-
-.dragstuff_slide > h2 {
-    margin-top: 2rem;
-    margin-left: 2rem;
+.dragstuff_header {
 
     position: absolute;
-    top: 0;
     left: 0;
+    top: 0;
+
+    display: flex;
+
+    margin-top: 2rem;
+    margin-left: 2rem;
 }
 
-.dragstuff_slide h2 a {
+
+.dragstuff_header a {
     text-decoration: underline;
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-left: 0.2rem;
 }
+
 
 
 

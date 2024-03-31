@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   let loaderEl = document.querySelector(".loader");
   gsap.to(loaderEl, {
-    yPercent: -300,
+    // yPercent: -300,
 
-    duration: 0.5,
+    opacity:0,
+
+    duration: 1,
     ease: "expo.inOut",
   });
 
